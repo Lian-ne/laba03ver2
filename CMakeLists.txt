@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 3.10)
+project(laba03ver2)
 find_program(CLANG_FORMAT "clang-format")
 if(CLANG_FORMAT)
     file(GLOB_RECURSE SOURCE_FILES ".cpp" ".h")
