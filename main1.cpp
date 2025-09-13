@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cctype>
+#include <cstdlib>
 
 int main() {
   // Константы для проверки диапазонов
@@ -101,7 +103,7 @@ int main() {
     return 0;
   }
 
-  const char *time_of_day;
+  const char* time_of_day;
   if (hours >= kMorningStart && hours < kMorningEnd) {
     time_of_day = "утра";
   } else if (hours >= kDayStart && hours < kDayEnd) {
@@ -117,7 +119,7 @@ int main() {
     display_hours = kDisplayHoursMax;
   }
 
-  const char *hour_form;
+  const char* hour_form;
   if (display_hours == kHourSingular) {
     hour_form = "час";
   } else if (display_hours >= kHourPluralStart &&
@@ -127,7 +129,7 @@ int main() {
     hour_form = "часов";
   }
 
-  const char *minute_form;
+  const char* minute_form;
   if (minutes % kMinuteModulo10 == kMinuteSingular &&
       minutes % kMinuteModulo100 != kException11) {
     minute_form = "минута";
