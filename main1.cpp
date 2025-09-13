@@ -1,6 +1,4 @@
 #include <iostream>
-#include <cctype>
-#include <cstdlib>
 
 int main() {
   // Константы для проверки диапазонов
