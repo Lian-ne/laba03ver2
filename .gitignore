@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Created by https://www.toptal.com/developers/gitignore/api/c++,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=c++,visualstudiocode
 
@@ -50,3 +51,16 @@
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/c++,visualstudiocode
+=======
+build/
+*.o
+*.a
+*.so
+*.out
+laba03ver2
+.DS_Store
+*.user
+*.suo
+*.sln
+*.vcxproj
+>>>>>>> fb6c62197088a0e94623ddc5ad742a260e6b6da7
