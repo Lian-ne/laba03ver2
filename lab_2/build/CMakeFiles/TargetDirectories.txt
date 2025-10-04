@@ -1,3 +1,0 @@
-/home/ser/laba03ver2/labs/2025/1sem/lab_1/laba03ver2/build/CMakeFiles/laba03ver2.dir
-/home/ser/laba03ver2/labs/2025/1sem/lab_1/laba03ver2/build/CMakeFiles/edit_cache.dir
-/home/ser/laba03ver2/labs/2025/1sem/lab_1/laba03ver2/build/CMakeFiles/rebuild_cache.dir
