@@ -9,7 +9,7 @@ const int kTaskThree = '3';
 const int kTaskFour = '4';
 
 const int kPrecision = 6;
-}
+}  // namespace
 
 void taskOne() {
     const int kIStep = 5;
