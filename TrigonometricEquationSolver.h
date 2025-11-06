@@ -23,4 +23,4 @@ void RunIterationMethod();
 [[nodiscard]] MethodResult CalculateIterationMethod(double epsilon, double coefficient);
 [[nodiscard]] MethodResult CalculateNewtonsMethod(double initialApproximation, double epsilon, double coefficient);
 [[nodiscard]] MethodResult CalculateBisectionMethod(double leftBoundary, double rightBoundary, double epsilon, double coefficient);
-}  // namespace TrigonometricEquationSolver 
+}  // namespace TrigonometricEquationSolver
