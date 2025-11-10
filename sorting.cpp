@@ -218,5 +218,5 @@ void StartApp() {
         std::cout << "Хотите продолжить работу (y - продолжить, n - закончить): ";
         std::cin >> continueExecution;
     }
-}    
 }
+}  // namespace Sorting
