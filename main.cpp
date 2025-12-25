@@ -108,7 +108,7 @@ void PrintWord(const Word& word) {
     }
 }
 
-}
+}  // namespace
 
 int main([[maybe_unused]] int argc, [[maybe_unused]] char** argv) {
     char text[kMaxTextLength] = {};
