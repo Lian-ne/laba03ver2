@@ -1,28 +1,47 @@
 cmake_minimum_required(VERSION 3.10)
 project(laba03ver2)
 
-# Установите стандарт C++ (рекомендую 17 или 20)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF)
 
-# Включите необходимые флаги компиляции
-if(CMAKE_CXX_COMPILER_ID MATCHES "Clang|GNU")
-    add_compile_options(-Wall -Wextra -Wpedantic)
-endif()
-
-# Если хотите включить clang-tidy
-# set(CMAKE_CXX_CLANG_TIDY "clang-tidy;-checks=*")
-
-# Добавьте исполняемый файл main
+# Исполняемый файл
 add_executable(main
     main.cpp
     Dictionary.cpp
 )
 
-# Если у вас есть заголовочные файлы в текущей директории
-target_include_directories(main PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+# Добавьте цель clang-format
+find_program(CLANG_FORMAT_EXE "clang-format")
+if(CLANG_FORMAT_EXE)
+    # Найти все исходные файлы
+    file(GLOB_RECURSE ALL_SOURCE_FILES
+        "*.cpp"
+        "*.hpp"
+        "*.h"
+        "*.c"
+    )
 
-# Если нужны дополнительные библиотеки
-# find_package(some_library REQUIRED)
-# target_link_libraries(main PRIVATE some_library)
+    # Исключить некоторые папки если нужно
+    # list(FILTER ALL_SOURCE_FILES EXCLUDE REGEX ".*/build/.*")
+
+    # Создать цель для форматирования
+    add_custom_target(clang-format
+        COMMAND ${CLANG_FORMAT_EXE}
+        -style=file
+        -i
+        ${ALL_SOURCE_FILES}
+        COMMENT "Running clang-format"
+    )
+
+    # Также можно добавить цель для проверки
+    add_custom_target(clang-format-check
+        COMMAND ${CLANG_FORMAT_EXE}
+        -style=file
+        --dry-run
+        --Werror
+        ${ALL_SOURCE_FILES}
+        COMMENT "Checking clang-format"
+    )
+else()
+    message(WARNING "clang-format not found!")
+endif()
