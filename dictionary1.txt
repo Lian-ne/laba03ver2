@@ -1,0 +1,10 @@
+apple
+yabloko
+book
+kniga
+car
+mashina
+cat
+kot
+dog
+sobaka
